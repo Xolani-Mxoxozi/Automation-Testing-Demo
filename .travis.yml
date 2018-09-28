@@ -36,8 +36,7 @@ env:
     
 before_script:
   - python -m SimpleHTTPServer &
-  - curl -d '{"desiredCapabilities":{"browser":"chrome"}}' -X POST http://127.0.0.1:9515/session --header "Content-Type:application/json"
-  - sleep 2
+  - sleep 5
   
 install:
   - sudo apt-get install xvfb
