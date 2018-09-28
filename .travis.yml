@@ -23,7 +23,7 @@ cache:
     - $HOME/.cache/pip
   
 addons:
-  chrome: stable
+#   chrome: stable
   sauce_connect: true
   
 env:
