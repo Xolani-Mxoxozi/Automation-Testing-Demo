@@ -90,8 +90,8 @@ before_install:
   
 
 script:
-#   - behave Web\ Testing
-  - sh startTest.sh
+  - behave Web\ Testing
+#   - sh startTest.sh
 #   - sleep 10
 #   - behave Second_web_demo  
 #   - sleep 10
