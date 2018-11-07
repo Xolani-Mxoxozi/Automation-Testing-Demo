@@ -90,7 +90,7 @@ before_install:
   
 
 script:
-  - behave --tags=Login
+  - behave Web \Testing
 #   - sh startTest.sh
 #   - sleep 10
 #   - behave Second_web_demo  
