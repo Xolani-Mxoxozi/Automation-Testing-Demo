@@ -1,105 +1,5 @@
-# language: python
-# sudo: required
-# python:
-#   - "3.6"
-#   - "2.7"
-#   - "3.5"
-#   - "pypy"
-#   - "pypy3"
-#   - "3.7-dev"
-  
-# include:
-#   - os: linux
-#     node_js: '7'
-    
-# before_script:
-#   - "export DISPLAY=:99.0"
-#   - "sh -e /etc/init.d/xvfb start"
-#   - sleep 3
-#   - fluxbox >/dev/null 2>&1 &
-  
-# cache:
-#   directories:
-#     - $HOME/.cache/pip
-  
-# addons:
-# #   chrome: stable
-#   sauce_connect: true
-  
-# env:
-#   global:
-# #     - secure: L/aGHl+XZ2tyeZ0xZTkKPySfsVZxkQt9Y3naN0icMu8DoXP83eUQ/gKooEKP0i0XTvwslCGa808UyZ99mWAdZ/WBA23i7q3fCLHwMcA7EcRsDky8vv6nMu00jTwLEX2ly+3+jc4xZV7ZO7KJNBRBcSD78L2KiMiRUzZ+WFZVrZ0=
-# #     - secure: T9Ur8o93Bs42r2De53U97oheh/E+P9VDpuRYHUtr5YoxU/n4sALcz3FfyJ6HOcuDctIXb26MvNrzvf9abaxNFf4QapqVlWW6Fj8xHA9x55eRjz4QasyM1nk7gqhlZ2HZuvxqhEcgvfirn7FGb9bIEuBVmFaJtqURp2JwEO4ABdQ=
-
-#     - username: "xolanimxoxozi"
-#     - access_key: "3bd6fd59-45ea-4b29-9c9c-6c5b0710caae"
-    
-# before_script:
-#   - python -m SimpleHTTPServer &
-#   - sleep 5
-  
-# install:
-#   - sudo apt-get install xvfb
-#   - sudo apt-get update
-#   - pip show setuptools
-  
-#   - pip install git+https://github.com/behave/behave
-#   - pip install toolium
-#   - pip install sauceclient
-  
-#   - wget -N http://chromedriver.storage.googleapis.com/2.36/chromedriver_linux64.zip -P ~/
-#   - unzip ~/chromedriver_linux64.zip -d ~/
-#   - sudo rm ~/chromedriver_linux64.zip
-#   - sudo mv -f ~/chromedriver /usr/local/share/
-#   - sudo chmod +x /usr/local/share/chromedriver
-#   - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
-#   - npm install --save-dev testcafe-browser-provider-saucelabs
-
-
-# # language: python
-# # sudo: true
-
-# # cache:
-# #   - pip
-# #   - bundler
-  
-# # addons:
-# #   apt:
-# #     sources:
-# #       - google-chrome
-# #     packages:
-# #       - openvpn
-# #       - libmagic-dev
-# #       - tree
-# #       - google-chrome-stable
-
-# # env:
-# #   - CHROMEDRIVER_VERSION=2.37
-
-# # before_install:
-# #   - wget -N http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip -P ~/
-# #   - unzip ~/chromedriver_linux64.zip -d ~/
-# #   - rm ~/chromedriver_linux64.zip
-# #   - sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
-# #   - sudo chown root:root /usr/local/bin/chromedriver
-# #   - sudo chmod 0755 /usr/local/bin/chromedriver
-# #   - rvm install 2.2
-# #   - rvm use 2.2
-# #   - gem install hiptest-publisher
-# #   - export PATH=$PATH:$HOME/.local/bin
-  
-
-# script:
-#   - behave Web\ Testing
-# #   - sh startTest.sh
-# #   - sleep 10
-# #   - behave Second_web_demo  
-# #   - sleep 10
-# #   - behave android_behave
-
-
 language: python
-sudo: false
+sudo: required
 python:
   - "3.6"
   - "2.7"
@@ -107,47 +7,58 @@ python:
   - "pypy"
   - "pypy3"
   - "3.7-dev"
-
-# -- DISABLED:
-#  - "nightly"
-#  - "3.4"
-#  - "3.3"
-#
-# NOW SUPPORTED: "3.5" => python 3.5.2 (>= 3.5.1)
-# NOTE: nightly = 3.7-dev
-
-# -- TEST-BALLON: Check if Python 3.6 is actually Python 3.5.1 or newer
-matrix:
-  allow_failures:
-    - python: "3.7-dev"
-    - python: "nightly"
-
+  
+include:
+  - os: linux
+#     node_js: '7'
+    
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3
+  - fluxbox >/dev/null 2>&1 &
+  
 cache:
   directories:
     - $HOME/.cache/pip
+  
+addons:
+#   chrome: stable
+  sauce_connect: true
+  
+env:
+  global:
+#     - secure: L/aGHl+XZ2tyeZ0xZTkKPySfsVZxkQt9Y3naN0icMu8DoXP83eUQ/gKooEKP0i0XTvwslCGa808UyZ99mWAdZ/WBA23i7q3fCLHwMcA7EcRsDky8vv6nMu00jTwLEX2ly+3+jc4xZV7ZO7KJNBRBcSD78L2KiMiRUzZ+WFZVrZ0=
+#     - secure: T9Ur8o93Bs42r2De53U97oheh/E+P9VDpuRYHUtr5YoxU/n4sALcz3FfyJ6HOcuDctIXb26MvNrzvf9abaxNFf4QapqVlWW6Fj8xHA9x55eRjz4QasyM1nk7gqhlZ2HZuvxqhEcgvfirn7FGb9bIEuBVmFaJtqURp2JwEO4ABdQ=
 
+    - username: "xolanimxoxozi"
+    - access_key: "3bd6fd59-45ea-4b29-9c9c-6c5b0710caae"
+    
+before_script:
+  - python -m SimpleHTTPServer &
+  - sleep 5
+  
 install:
-  - travis_retry pip install -q -r py.requirements/ci.travis.txt
+  - sudo apt-get install xvfb
+  - sudo apt-get update
   - pip show setuptools
-  - python setup.py -q install
+  
+  - pip install git+https://github.com/behave/behave
+  - pip install toolium
+  - pip install sauceclient
+  
+  - wget -N http://chromedriver.storage.googleapis.com/2.36/chromedriver_linux64.zip -P ~/
+  - unzip ~/chromedriver_linux64.zip -d ~/
+  - sudo rm ~/chromedriver_linux64.zip
+  - sudo mv -f ~/chromedriver /usr/local/share/
+  - sudo chmod +x /usr/local/share/chromedriver
+  - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+  - npm install --save-dev testcafe-browser-provider-saucelabs
 
 script:
-  - python --version
-#   - pytest test tests
-  - behave -f progress --junit --tags=login
-
-after_failure:
-  - echo "FAILURE DETAILS (from XML reports):"
-  - bin/behave.junit_filter.py --status=failed reports
-
-# -- ALTERNATIVE:
-#  egrep -L 'errors="0"|failures="0"' reports/*.xml | xargs -t cat
-
-# -- USE: New container-based infrastructure for faster startup.
-#    http://docs.travis-ci.com/user/workers/container-based-infrastructure/
-#
-# SEE ALSO:
-#   http://lint.travis-ci.org
-#   http://docs.travis-ci.com/user/caching/
-#   http://docs.travis-ci.com/user/multi-os/  (Linux, MACOSX)
-
+  - behave Web\ Testing
+#   - sh startTest.sh
+#   - sleep 10
+#   - behave Second_web_demo  
+#   - sleep 10
+#   - behave android_behave
