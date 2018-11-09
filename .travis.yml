@@ -8,7 +8,7 @@ services:
     
 script:
 #     - docker pull kineticskunk/node-chrome:3.11.1-toolium
-    - sudo docker run -it -v /$(pwd):/dev/shm/ kineticskunk/node-chrome:3.11.1-toolium bash -c "cd dev/shm/; behave"
+    - sudo docker run -it -v /$(pwd):/dev/shm/ kineticskunk/node-chrome:3.11.1-toolium bash -c "cd dev/shm/; ls"
     
 # after_script:
 #     - bash test.sh
